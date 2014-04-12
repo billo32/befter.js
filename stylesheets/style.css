@@ -1,0 +1,28 @@
+html {
+	font-family: Arial;
+}
+
+body { 
+	width: 800px;
+	margin: 40px auto;
+}
+
+header {
+	text-align: center
+}
+
+section{
+	font-size: 14px;
+	line-height: 1.5;
+	margin: 30px 0;
+}
+
+section .example{
+	text-align: center;
+	margin: 30px 0;
+}
+
+section .example p {color:gray;font-size:12px;}
+
+footer { text-align: center; font-size: 12px; color: gray; }
+footer a {color: gray;}

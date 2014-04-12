@@ -1,116 +1,129 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Befter.js by billo32</title>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Befter.js</title>
+	<link rel="stylesheet" href="stylesheets/style.css">
+	<link rel="stylesheet" href="stylesheets/shThemeDefault.css">
+	<script src="javascripts/shCore.js"></script>	
+	<script src="javascripts/shLegacy.js"></script>	
+	<script src="javascripts/shBrushJScript.js"></script>	
+</head>
+<body>
+	
+	<header>
+		<img src="src/befter.png" alt="">
+   	</header>
+	
+	<section>
+		<p><b>Befter.js</b> – jQuery плагин для сравнения 2х картинок методом наложения одной на другую. Его удобно использовать для отображения различий, например:</p>
+		<ul>
+			<li>между версиями (whats new?)</li>
+			<li>сравнения дизайнов</li>
+			<li>различий на старых и новых фото</li>
+			<li>применения фото эффектов</li>
+		</ul>
+		<p>Такой же механизм использовал <a href="#">Илья Бирман</a> для наглядной демонстрации отличий на карте метро</p>
+		<div class="example">
+			<img src="src/birman_metro_map.png" alt="">
+			<p>Различия на карте метро</p>
+		</div>
+	</section>	
+		
+	<section>
+		<h1>Принцип работы</h1>
+		
+		<p><b>1.</b> Для начала необходимо подключить jQuery и сам плагин – befter.js:</p>
+		<pre class="brush: js; gutter: false; toolbar: false; ">
+			<script src="javascripts/jquery-2.1.0.min.js"></script>
+			<script src="javascripts/jquery.befter.js"></script>
+		</pre>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <script src="js/jquery-2.1.0.min.js"></script>
-    <script src="js/jquery.befter.js"></script>
+		<p><b>2.</b> Затем немного html кода:</p>
+		<pre class="brush: js; gutter: false; toolbar: false; ">
+			<div class="сomparer">
+				<img src="http://placehold.it/500x500&amp;text=1">
+				<img src="http://placehold.it/500x500&amp;text=2">
+			</div>
+		</pre>	
 
-    <style>
+		<p><b>3.</b> Теперь вызов:</p>
+		<pre class="brush: js; gutter: false; toolbar: false; ">
+			<script>
+				$(window).load(function () {
+					$('.comparer').befter();
+				});
+			</script>
+		</pre>	
+		
+		<p><b>* <i>Для блока (тут - comparer) обязательно должны быть заданы ширина и высота</i></b></p>	
+	</section>
+	
+	<section>	
+		<h1>Опции</h1>
+		
+		<pre class="brush: js; gutter: false; toolbar: false; ">
+			$('.comparer').befter({
+				color 		: 'red', 	// цвет
+				style 		: 'solid',	// стиль линии
+				position 	: '50px',	// положение линии-делителя от левого края
+				bold 		: '1px', 	// толщина линии
+			});
+		</pre>	
+	</section>
+		
+	<section>
+		<h1>Примеры</h1>
+		
+		<p>Простой пример с плейсхолдерами</p>
 
-    .comparer img {
-      max-width: none;
-    }
-    </style>
+		<pre class="brush: js; gutter: false; toolbar: false; ">
+			$('.comparer').befter();
+		</pre>
 
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Befter.js</h1>
-        <p>jQuery плагин для сравнения картинок методом наложения</p>
+		<div class="example">
+			<div class="comparer" style="width:500px; height:300px; margin: 0 auto;">
+				<img src="http://placehold.it/500x300&amp;text=1">
+				<img src="http://placehold.it/500x300&amp;text=2">
+			</div>
+			<p>Плейсхолдеры</p>
+		</div>
 
-        <p class="view"><a href="https://github.com/billo32/befter.js">View the Project on GitHub <small>billo32/befter.js</small></a></p>
+		<p>Простой пример с кастомизаций и городами</p>
 
+		<pre class="brush: js; gutter: false; toolbar: false; ">
+			$('.comparer').befter({color: 'blue', style: 'dashed', bold: '2px'});
+		</pre>
 
-        <ul>
-          <li><a href="https://github.com/billo32/befter.js/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/billo32/befter.js/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/billo32/befter.js">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Befter.js</h3>
+		<div class="example">
+			<div class="comparer2" style="width:750px; height:446px; margin: 0 auto;">
+				<img src="src/city1.jpg">
+				<img src="src/city2.jpg">
+			</div>
+			<p>Шанхай 1990 и 2012</p>
+		</div>
+	</section>
 
-<p>Плагин для сравнения картинок методом наложения. Работает по принципу до/после. Удобно использовать для отображения различий между версиями.</p> 
-<p>Например, как у <a href = "http://ilyabirman.ru/projects/moscow-metro-old/">Ильи Бирмана</a></p>
-<p><img src="src/ib_m.png"></p>
-
-<!-- <pre>
-<code>
-"...
-
-	<script src="js/jquery-2.1.0.min.js"></script>
-	<script src="js/jquery.befter.js"></script>
-
-...
-
-	<div class="comparer">
- 		<img src="http://placehold.it/500x500&text=1" >
-		<img src="http://placehold.it/500x500&text=2" > 
-	</div>
-
-...
-
-<script>
-	$(window).load(function () {
-		$(".comparer").befter();
-	})
-</script>
-
-..."
-</code></pre> -->
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Пример использования</h3>
-
-<p>Вот так вот</p>
-
-
-  <div class="comparer" style="width:500px; height:500px;">
-    <img src="http://placehold.it/500x500&text=1" >
-    <img src="http://placehold.it/500x500&text=2" > 
-  </div>
+	<section>
+		<h1>Скачать</h1>
+		<p>Проект на GitHub: <a href="https://github.com/billo32/befter.js">befter.js</a></p>
+		<p>Скачать ZIP : <a href="https://github.com/billo32/befter.js/zipball/master">https://github.com/billo32/befter.js/zipball/master</a></p>
+		<p>Скачать TAR : <a href="https://github.com/billo32/befter.js/tarball/master">https://github.com/billo32/befter.js/tarball/master</a></p>
+	</section>
 
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+	<footer>2014 © <a href="https://github.com/billo32/befter.js">befter.js</a> | <a href="http://dmitrybilichenko.ru">dmitrybilichenko.ru</a></footer>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+	<script type="text/javascript">
+	    $(function () {
+	    	SyntaxHighlighter.all()
+	    });
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+	    $(window).load(function(){
+	    	$('.comparer2').befter({color: 'blue', style: 'dashed', bold: '2px'});
+	    })
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+	</script>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/billo32">billo32</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-
-    <script>
-      $(window).load(function () {
-        $(".comparer").befter();
-      });
-    </script>
-    
-  </body>
+</body>
 </html>
