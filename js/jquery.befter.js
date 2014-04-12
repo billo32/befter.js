@@ -19,7 +19,9 @@
 				$this.find('img').last().parent().css('width', options.position);
 			})
 			return this.mousemove(function(e){
-				$(this).find('img').last().parent().css('width', e.offsetX);
+				if (e.offsetX <= $this.width()) {
+					$(this).find('img').last().parent().css('width', e.offsetX);
+				}
 			});
 		}
 	};
