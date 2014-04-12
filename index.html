@@ -1,38 +1,29 @@
 <!doctype html>
 <html lang="en">
 <head>
+	<title>Befter.js</title>
 	<meta charset="UTF-8">
 	<meta description="jQuery плагин для сравнения картинок методом наложения">
-	<title>Befter.js</title>
 	<script src="js/jquery-2.1.0.min.js"></script>
 	<script src="js/jquery.comparer.js"></script>
+
+	<style>
+		.comparer{ position: absolute; left:50%; top: 50%; margin-left: -250px; margin-top: -250px }
+	</style>
+
 </head>
 
 <body>
 	
 	<div class="comparer">
-		<img src="src/1.jpg" alt="">
-		<img src="src/2.jpg" alt="">
-	</div>
-
-
-	<div class="comparer">
- 		<img src="src/http://placehold.it/500x500&text=1" >
-		<img src="src/http://placehold.it/500x500&text=2" > 
-	</div>
-
-
-	<div class="comparer">
- 		<img src="ym1.jpg" >
-		<img src="ym2.jpg" > 
+ 		<img src="http://placehold.it/500x500&text=1" >
+		<img src="http://placehold.it/500x500&text=2" > 
 	</div>
 
 <script>
-	
-$(window).load(function () {
-	$(".comparer").comparer();
-})
-
+	$(window).load(function () {
+		$(".comparer").comparer();
+	})
 </script>
 
 </body>

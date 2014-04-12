@@ -4,15 +4,19 @@ jQuery плагин для сравнения картинок методом н
 #### Использование
 ##### HTML
 
-`<div class="comparer">	
+```
+<div class="comparer">	
 	<img src="http://placehold.it/500x500&text=1" alt="">
 	<img src="http://placehold.it/500x500&text=2" alt="">
-</div>`
+</div>
+```
 
 	
 ##### JS
-`<script>
+```
+<script>
 	$(window).load(function () {
 		$(".comparer").comparer();
 	});
-</script>`
+</script>
+```
