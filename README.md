@@ -16,7 +16,23 @@ jQuery плагин для сравнения картинок методом н
 ```
 <script>
 	$(window).load(function () {
-		$(".comparer").comparer();
+		$(".comparer").befter();
 	});
 </script>
+```
+
+#### Опции
+
+```
+$(".comparer").befter(/*{ опции }*/)  
+
+{
+	position : '50px',  // позиция делителя от левого края
+	bold : '1px',	    // ширина делителя
+	style : 'bold',     // стиль делителя
+	color : 'red',      // цвет делителя
+}
+
+$(".comparer").befter({bold : '2px', color : 'blue' });
+
 ```
