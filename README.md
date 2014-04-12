@@ -36,3 +36,8 @@ $(".comparer").befter(/*{ опции }*/)
 $(".comparer").befter({bold : '2px', color : 'blue' });
 
 ```
+
+#### Демо
+
+Примеры использования можно найти [тут](http://billo32.github.io/befter.js/ "Befter.js").
+
