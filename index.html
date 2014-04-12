@@ -83,24 +83,24 @@
 	<section>
 		<h1>Примеры</h1>
 		
-		<p>Простой пример с плейсхолдерами</p>
+		<p>Простой пример</p>
 
 		<pre class="brush: js; gutter: false; toolbar: false; ">
-			$('.comparer').befter();
+			$('.comparer').befter({position: '400px'});
 		</pre>
 
 		<div class="example">
-			<div class="comparer" style="width:500px; height:300px; margin: 0 auto;">
-				<img src="http://placehold.it/500x300&amp;text=1">
-				<img src="http://placehold.it/500x300&amp;text=2">
+			<div class="comparer1" style="width:800px; height:322px; margin: 0 auto;">
+				<img src="src/project_moqup.png">
+				<img src="src/project_design.png">
 			</div>
-			<p>Плейсхолдеры</p>
+			<p>От прототипа к дизайну</p>
 		</div>
 
-		<p>Простой пример с кастомизаций и городами</p>
+		<p>Пример с кастомизаций</p>
 
 		<pre class="brush: js; gutter: false; toolbar: false; ">
-			$('.comparer').befter({color: 'blue', style: 'dashed', bold: '2px'});
+			$('.comparer').befter({color: 'blue', style: 'dashed', bold: '2px', position : '375px'});
 		</pre>
 
 		<div class="example">
@@ -110,6 +110,7 @@
 			</div>
 			<p>Шанхай 1990 и 2012</p>
 		</div>
+
 	</section>
 
 	<section>
@@ -128,7 +129,8 @@
 	    });
 
 	    $(window).load(function(){
-	    	$('.comparer2').befter({color: 'blue', style: 'dashed', bold: '2px'});
+	    	$('.comparer1').befter({position: '400px'})
+	    	$('.comparer2').befter({color: 'green', style: 'dashed', bold: '3px', position : '375px'});
 	    })
 
 	</script>

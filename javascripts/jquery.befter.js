@@ -13,14 +13,15 @@
 		init:function(params) {	
 			var options = $.extend({}, defaults, params);
 			$.each($(this),function(){
-				$this = $(this);		        
+				var $this = $(this);		        
 				$this.find('img').first().wrap('<div class="old" style="position: absolute; float: left;">');
 				$this.find('img').last().wrap('<div class="new" style="position: absolute; float: left; overflow: hidden; border-right: ' + options.bold + ' '+ options.style +' ' + options.color + '; ">');	
 				$this.find('img').last().parent().css('width', options.position);
 			})
 			return this.mousemove(function(e){
+				var $this = $(this);
 				if (e.offsetX <= $this.width()) {
-					$(this).find('img').last().parent().css('width', e.offsetX);
+					$this.find('img').last().parent().css('width', e.offsetX);
 				}
 			});
 		}
