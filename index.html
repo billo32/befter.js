@@ -31,12 +31,34 @@
         <h3>
 <a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Befter.js</h3>
 
-<p>Плагин для сравнения картинок методом наложения. Работает по принципу до/после. Удобно использовать для отображения разичий между версиями. Например как у Ильи Бирмана</p>
+<p>Плагин для сравнения картинок методом наложения. Работает по принципу до/после. Удобно использовать для отображения разичий между версиями.</p> 
+<p>Например, как у <a href = "http://ilyabirman.ru/projects/moscow-metro-old/">Ильи Бирмана</a></p>
 <p><img src="src/ib_m.png"></p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<pre><code>
+
+...
+
+	<script src="js/jquery-2.1.0.min.js"></script>
+	<script src="js/jquery.befter.js"></script>
+
+...
+
+	<div class="comparer">
+ 		<img src="http://placehold.it/500x500&text=1" >
+		<img src="http://placehold.it/500x500&text=2" > 
+	</div>
+
+...
+
+<script>
+	$(window).load(function () {
+		$(".comparer").befter();
+	})
+</script>
+
+...
+
 </code></pre>
 
 <p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
