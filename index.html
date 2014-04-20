@@ -59,9 +59,11 @@
 
 		<p><b>2.</b> Затем немного html кода:</p>
 		<pre class="brush: js; gutter: false; toolbar: false; ">
-			<div class="сomparer">
-				<img src="http://placehold.it/500x500&amp;text=1">
-				<img src="http://placehold.it/500x500&amp;text=2">
+			<div class="example">
+				<div class="сomparer">
+					<img src="http://placehold.it/500x500&amp;text=1">
+					<img src="http://placehold.it/500x500&amp;text=2">
+				</div>
 			</div>
 		</pre>	
 
@@ -136,11 +138,11 @@
 	<script type="text/javascript">
 	    $(function () {
 	    	SyntaxHighlighter.all()
+	    	$('.comparer1').befter({position: '400px'})
+	    	$('.comparer2').befter({color: 'green', style: 'dashed', bold: '3px', position : '375px'});
 	    });
 	    $(window).load(function(){
 	    	
-	    	$('.comparer1').befter({position: '400px'})
-	    	$('.comparer2').befter({color: 'green', style: 'dashed', bold: '3px', position : '375px'});
 
 	    	$('.example').fadeIn('slow');
 	    })
