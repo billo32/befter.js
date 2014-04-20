@@ -16,6 +16,15 @@
 	<link rel="shortcut icon" type="image/png" href="src/favicon.ico"/>
 
 </head>
+
+<style>
+	.example{
+		display: none;
+	}
+
+</style>
+
+
 <body>
 	
 	<header>
@@ -128,9 +137,12 @@
 	    $(function () {
 	    	SyntaxHighlighter.all()
 	    });
-	    $(document).ready(function(){
+	    $(window).load(function(){
+	    	
 	    	$('.comparer1').befter({position: '400px'})
 	    	$('.comparer2').befter({color: 'green', style: 'dashed', bold: '3px', position : '375px'});
+
+	    	$('.example').fadeIn('slow');
 	    })
 	</script>
 
